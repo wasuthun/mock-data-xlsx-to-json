@@ -59,25 +59,25 @@ for(let index = 0; index < list.length; index++){
 }
 }
 for(let index1 = 0; index1 < list.length; index1++) {
-for (let index2 = 0; index2 < list2.length; index2++) {
-  for (let index3 = 0; index3 < list3.length; index3++) {
-    for (let index4 = 0; index4 < result.length; index4++) {
-      for (let index5 = 0; index5 < result[index4].children.length; index5++) {
-      if(list[index1].index===list3[index3].index && list[index1].index===list2[index2].index){
-        if(result[index4].children.map(x=>x.name).includes(list2[index2].first)){
-          if(!result[index4].children.filter(x=>x.name===list2[index2].first)[0].children.map(x=>x.name).includes(list3[index3].first)){
-          result[index4].children.filter(x=>x.name===list2[index2].first)[0].children.push(
-            {
-              name:list3[index3].first
+  for (let index2 = 0; index2 < list2.length; index2++) {
+    for (let index3 = 0; index3 < list3.length; index3++) {
+      for (let index4 = 0; index4 < result.length; index4++) {
+        for (let index5 = 0; index5 < result[index4].children.length; index5++) {
+        if(list[index1].index===list3[index3].index && list[index1].index===list2[index2].index){
+          if(result[index4].children.map(x=>x.name).includes(list2[index2].first)){
+            if(!result[index4].children.filter(x=>x.name===list2[index2].first)[0].children.map(x=>x.name).includes(list3[index3].first)){
+            result[index4].children.filter(x=>x.name===list2[index2].first)[0].children.push(
+              {
+                name:list3[index3].first
+              }
+            )
             }
-          )
           }
         }
       }
-    }
+      }
     }
   }
-}
 }
 
 console.log(JSON.stringify(result))
